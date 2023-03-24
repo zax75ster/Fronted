@@ -30,7 +30,7 @@ pipeline {
                 withSonarQubeEnv('SonarQube') {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
-                 timeout(time: 1, unit: 'MINUTES') {
+                 timeout(time: 7, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
                 }
             }
